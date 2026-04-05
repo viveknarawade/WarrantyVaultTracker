@@ -14,10 +14,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-        apiKey: "AIzaSyD--plqy-8gvKFfZ-JQEQ5YmYxcNphPDbQ",
-        appId: "1:357856242430:android:3ce6c9da68412321dbd3af",
-        messagingSenderId: "357856242430",
-        projectId: "warranty-vault-tracker"),
+        apiKey: "AIzaSyCKHDksV5qkthHPMJFjJ_wXbkaGdiitoGI",
+        appId: "1:1069059382730:android:e5603e53a65c9e7a17c333",
+        messagingSenderId: "1069059382730",
+        projectId: "warrantyvaulttracker"),
   );
   NotificationService().initNotification();
   tz.initializeTimeZones();

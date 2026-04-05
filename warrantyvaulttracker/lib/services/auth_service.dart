@@ -83,23 +83,46 @@ class AuthService {
     await UserSessionData.clearSessionData();
   }
 
+  // Future<void> deleteAccount() async {
+  //   final user = _auth.currentUser;
+
+  //   final uid = UserSessionData.uid;
+  //   if (user == null) return;
+  //   log(uid.toString());
+
+  //   await _firestore.collection('users').doc(uid).delete();
+
+  //   await user.delete();
+
+  //   await UserSessionData.clearSessionData();
+  // }
+
   Future<void> deleteAccount() async {
     final user = _auth.currentUser;
-
-    final uid = UserSessionData.uid;
     if (user == null) return;
-    log(uid.toString());
 
-    // 1️⃣ Delete Firestore user document
+    final uid = user.uid;
+
+    //  Delete all documents in the 'warranties' subcollection
+    final warrantiesQuery = await _firestore
+        .collection('users')
+        .doc(uid)
+        .collection('warranties')
+        .get();
+
+    final batch = _firestore.batch();
+    for (var doc in warrantiesQuery.docs) {
+      batch.delete(doc.reference);
+    }
+
+    await batch.commit();
+
     await _firestore.collection('users').doc(uid).delete();
 
-    // 2️⃣ Delete Firebase Auth user
+    //  Delete Firebase Auth user
     await user.delete();
 
-    // 3️⃣ Clear local session
+    // Clear local session
     await UserSessionData.clearSessionData();
   }
-
-//update user name and email
-//change pass
 }

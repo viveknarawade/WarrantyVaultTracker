@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "357856242430",
-    "project_id": "warranty-vault-tracker",
-    "storage_bucket": "warranty-vault-tracker.firebasestorage.app"
+    "project_number": "1069059382730",
+    "project_id": "warrantyvaulttracker",
+    "storage_bucket": "warrantyvaulttracker.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:357856242430:android:3ce6c9da68412321dbd3af",
+        "mobilesdk_app_id": "1:1069059382730:android:e5603e53a65c9e7a17c333",
         "android_client_info": {
           "package_name": "com.example.warrantyvaulttracker"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD--plqy-8gvKFfZ-JQEQ5YmYxcNphPDbQ"
+          "current_key": "AIzaSyCKHDksV5qkthHPMJFjJ_wXbkaGdiitoGI"
         }
       ],
       "services": {
